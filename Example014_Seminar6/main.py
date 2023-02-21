@@ -14,6 +14,10 @@
 # 7. Удалить контакт
 # 8. Выход
 
+from start_menu import main_start
+
+main_start() # Укажите название вашего файла с контактами. По умолчанию указан 'phone_book.txt'
+
 
 
 
