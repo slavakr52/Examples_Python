@@ -6,16 +6,13 @@ def open_phone_book(file):
         print(f'Открыт файл {file}\n')
         return phone_book
     
-
 def save_phone_book(file):
     with open('phone_book.txt', 'w', encoding = 'utf-8') as data:
         for i in file:
             data.write(i)
         print('Изменения сохранены\n')
         
-
 def show_phone_book(file):
-    file_check(file)
     print('========= Контакты =========')
     for i in file:
         print(' '.join(i.split(';')))
@@ -37,7 +34,6 @@ def change_phone_book(file):
             file[i] = file[i].replace(user_info, new_user_info)
             print('\nНомер изменён. Не забудьте сохранить изменения\n')
 
-
 def search_phone_book(file):
     user_info = input('Введите номер контакта, по которому будем искать: ')
     for i in range(len(file)):
@@ -58,9 +54,16 @@ def delete_phone_book(file):
                 print('\nКонтакт удалён. Не забудьте сохранить изменения\n')
             break
 
-def file_check(file):
-    if len(file) == 0:
-        print('Вы не открыли файл либо файл пуст')
+
+
+
+def warning():
+    print('Файл не открыт!\n')
+
+def check():
+    result = input('Вы действительно хотите выйти? Все несохранённые изменения будут утеряны\n'
+                            'Если да, введите 1, если нет - нажмите Enter: \n')
+    return result
 
 
     
